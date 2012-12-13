@@ -1,0 +1,16 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: symfony
+    database_user: root
+    database_password: root
+    
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+    
+    locale: es
+    secret: 9b1400c52e2a4b029fac10aa186884685
+    database_path: null
