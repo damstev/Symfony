@@ -39,4 +39,16 @@ articulo_borrar:
 articulo_new:
   pattern: /articulo/new
   defaults: { _controller: MDWDemoBundle:Articulos:new}
+  
+ver_articulos:
+  pattern: /ver-articulos
+  defaults: { _controller: MDWDemoBundle:Articulos:verArticulos }
+
+MDWDemoBundle_noticias:
+    pattern:  /noticias
+    defaults: { _controller: MDWDemoBundle:Notice:index }
+
+MDWDemoBundle_noticeView:
+    pattern:  /leerNoticia/{notice_id}
+    defaults: { _controller: MDWDemoBundle:Notice:noticeView }
 

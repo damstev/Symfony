@@ -93,5 +93,9 @@ class ArticulosController extends Controller {
                     'form' => $form->createView()
                 ));
     }
+    
+    public function verArticulosAction() {
+        return $this->render('MDWDemoBundle:Articulos:ver_articulos.html.twig', array());
+    }
 
 }

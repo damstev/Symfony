@@ -1,32 +1,16 @@
-{# src/MDW/DemoBundle/Resources/views/layout.html.twig #}
-{% extends '::base.html.twig' %}
+{% extends '::base.html.twig'  %} {# extendemos del layout por defecto #}
 
-{% block stylesheets %}
-{{ parent() }}
-<link href="{{ asset('bundles/mdwdemo/css/main.css') }}" type="text/css" rel="stylesheet" /> 
-{% endblock %}
+{% block javascripts %}
+{# añadimos la CDN de jQuery o en su defecto lo descargamos e incluimos con:
+<script src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>
+ #}
+{% endblock javascripts %}
 
+{# creamos una estructura para el layout general #}
 {% block body %}
-<div id="layout">
-    <div id="header">
-        {% block encabezado%}
-            <h1>Encabezado</h1>
-        {% endblock %}
-
-        </div>
-        <div id="content" class="clean" >
-            <div id="content_left">
-        {% block content %}
-        {% endblock %}
-                </div>
-                <div id="content_right">
-                   {% block content_right %}
-                        contenido derecha
-                    {% endblock %}
-                    </div>
-                </div>
-                <div id="footer">
-                    <p>Pie {{"now"|date("m/d/Y")}}</p>
-                </div>
-            </div>
-{% endblock %}
+<div>
+    <h1>*** Web de Noticias ***</h1>
+    {# según el patrón de 3 niveles, creamos el bloque de contenido #}
+    {% block content %}{% endblock content %}
+</div>
+{% endblock body%}
