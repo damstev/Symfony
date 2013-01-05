@@ -3,6 +3,7 @@
 namespace MDW\DemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * MDW\DemoBundle\Entity\Articles
@@ -25,13 +26,16 @@ class Articles {
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\NotNull(message="El titulo no puede ser nulo")
+     * @Assert\MaxLength(limit=25, message="El titulo no debe tener mas de {{ limit }} caracteres")  
+     * @Assert\MinLength(limit=5, message="El titulo no debe tener menos de {{ limit }} caracteres")  
      */
     private $title;
 
     /**
      * @var string $author
      *
-     * @ORM\Column(name="author", type="string", length=255)
+     * @ORM\Column(name="author", type="string", length=255)       
      */
     private $author;
 

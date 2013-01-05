@@ -9,6 +9,8 @@ articulos:
 articulo:
   pattern: /articulo/{id}
   defaults: { _controller: MDWDemoBundle:Default:articulo}
+  requirements:
+    id: \d+
   
 hello:
   pattern:  /hello
@@ -33,4 +35,8 @@ articulo_visualizar:
 articulo_borrar:
   pattern: /articulos/borrar/{id}
   defaults: { _controller: MDWDemoBundle:Articulos:borrar }
+  
+articulo_new:
+  pattern: /articulo/new
+  defaults: { _controller: MDWDemoBundle:Articulos:new}
 
